@@ -1,5 +1,6 @@
 name: build lisp kernel
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'lisp-kernel/**'
