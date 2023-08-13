@@ -15,7 +15,7 @@ jobs:
           - { dir: linuxx8632 }
     steps:
       - uses: actions/checkout@v3
-      - run: cd ${{matrix.dir}}; make
+      - run: cd lisp-kernel/${{matrix.dir}}; make
 
   compile-macos:
     runs-on: macos-latest
