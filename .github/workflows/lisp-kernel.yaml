@@ -1,4 +1,9 @@
 name: build lisp kernel
+on:
+  push:
+    paths:
+      - 'lisp-kernel/**'
+
 jobs:
   compile-linux:
     runs-on: ubuntu-latest
