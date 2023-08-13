@@ -6,7 +6,7 @@ CDEFINES=-DLINUX -DWORD_SIZE=32
 	cc -m32 -c $< $(CDEFINES) -o $@
 
 hello: $(OBJS)
-	cc $(OBJS) -o hello
+	cc -m32 $(OBJS) -o hello
 
 clean:
 	rm -f hello $(OBJS)
