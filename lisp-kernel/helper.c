@@ -1,7 +1,7 @@
 int
 helper(void)
 {
-#if defined(LINUX)
+#if defined(LINUX) && (WORD_SIZE == 64)
     return 42;
 #elif defined(DARWIN)
     return 10;

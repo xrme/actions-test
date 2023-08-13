@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: cd lisp-kernel/${{matrix.dir}}; make
+      - run: cd lisp-kernel/${{matrix.dir}}; ./hello
 
   compile-macos:
     runs-on: macos-latest

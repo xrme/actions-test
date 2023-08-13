@@ -3,7 +3,7 @@ OBJS=main.o helper.o
 CDEFINES=-DLINUX -DWORD_SIZE=32
 
 .c.o:
-	cc -c $< $(CDEFINES) -o $@
+	cc -m32 -c $< $(CDEFINES) -o $@
 
 hello: $(OBJS)
 	cc $(OBJS) -o hello
