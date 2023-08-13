@@ -23,3 +23,20 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: make
+
+  compile-windows:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+        working-directory: lisp-kernel/win64
+    steps:
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: ${{mingw64}}
+          install: >-
+            mingw-w64-x86_64-gcc
+            m4
+            make
+      - uses: actions/checkout@v3
+      - run: make
