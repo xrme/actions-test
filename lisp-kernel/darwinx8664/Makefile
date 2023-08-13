@@ -1,5 +1,5 @@
 VPATH=..
-OBJS=main.o aux.o
+OBJS=main.o helper.o
 CDEFINES=-DDARWIN
 
 .c.o:
