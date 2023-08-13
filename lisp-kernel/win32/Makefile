@@ -1,6 +1,6 @@
 VPATH=..
 OBJS=main.o helper.o
-CDEFINES=-DWINDOWS -DWIN_32
+CDEFINES=-DWINDOWS -DWIN_32 -DWORD_SIZE=32
 
 .c.o:
 	cc -c $< $(CDEFINES) -o $@

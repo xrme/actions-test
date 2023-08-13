@@ -1,6 +1,6 @@
 VPATH=..
 OBJS=main.o helper.o
-CDEFINES=-DDARWIN
+CDEFINES=-DDARWIN -DWORD_SIZE=64
 
 .c.o:
 	cc -c $< $(CDEFINES) -o $@

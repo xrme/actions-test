@@ -1,6 +1,6 @@
 VPATH=..
 OBJS=main.o helper.o
-CDEFINES=-DLINUX
+CDEFINES=-DLINUX -DWORD_SIZE=64
 
 .c.o:
 	cc -c $< $(CDEFINES) -o $@
