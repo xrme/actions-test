@@ -7,7 +7,9 @@ on:
 jobs:
   compile-linux:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lisp-kernel/linux8664
     steps:
       - uses: actions/checkout@v3
-      - run: cd lisp-kernel/linuxx8664
       - run: make
