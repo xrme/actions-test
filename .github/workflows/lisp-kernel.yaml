@@ -14,6 +14,7 @@ jobs:
           - { dir: linuxx8664 }
           - { dir: linuxx8632 }
     steps:
+      - run: sudo apt-get install -y gcc-multilib
       - uses: actions/checkout@v3
       - run: cd lisp-kernel/${{matrix.dir}}; make
       - run: cd lisp-kernel/${{matrix.dir}}; ./hello
