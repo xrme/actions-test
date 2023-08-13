@@ -14,3 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: make
+  compile-macos:
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: lisp-kernel/darwinx8664
+    steps:
+      - uses: actions/checkout@v3
+      - run: make
