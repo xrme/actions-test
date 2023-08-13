@@ -8,12 +8,14 @@ on:
 jobs:
   compile-linux:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: lisp-kernel/linuxx8664
+    strategy:
+      matrix:
+        include:
+          - { dir: linuxx8664 }
+          - { dir: linuxx8632 }
     steps:
       - uses: actions/checkout@v3
-      - run: make
+      - run: cd ${{matrix.dir}}; make
 
   compile-macos:
     runs-on: macos-latest
@@ -29,8 +31,8 @@ jobs:
     strategy:
       matrix:
         include:
-          - { env: mingw64, arch: x86_64 }
-          - { env: mingw32, arch: i686 }
+          - { env: mingw64, arch: x86_64, dir: win64 }
+          - { env: mingw32, arch: i686, dir: win32 }
     defaults:
       run:
         shell: msys2 {0}
@@ -43,7 +45,4 @@ jobs:
             m4
             make
       - uses: actions/checkout@v3
-      - run: cd lisp-kernel/win64; make
-        if: ${{matrix.arch == 'x86_64'}}
-      - run: cd lisp-kernel/win32; make 
-        if: ${{matrix.arch == 'i686'}}
+      - run: cd lisp-kernel/${{matrix.dir}}; make
