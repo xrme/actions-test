@@ -44,6 +44,6 @@ jobs:
             make
       - uses: actions/checkout@v3
       - run: cd lisp-kernel/win64; make
-        if ${{matrix.arch == 'x86_64'}}
+        if: ${{matrix.arch == 'x86_64'}}
       - run: cd lisp-kerne/win32; make 
-        if ${{matrix.arch == 'i686'}}
+        if: ${{matrix.arch == 'i686'}}
