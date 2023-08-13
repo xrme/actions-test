@@ -1,0 +1,8 @@
+name: build lisp kernel
+jobs:
+  compile-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: cd lisp-kernel/linuxx8664
+      - run: make
